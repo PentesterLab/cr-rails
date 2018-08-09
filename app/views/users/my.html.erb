@@ -1,0 +1,61 @@
+
+  <div class="container">
+<h3>Phone Number</h3>
+<%= form_with(model: @current_user, local: true) do |form| %>
+  <% if @current_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@current_user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @current_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+  <div class="field">
+    <label>Phone Number:</label>
+    <%= form.text_field :phonenumber %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>
+<br/>
+<br/>
+<div class="container">
+<h3>Password</h3>
+
+<%= form_tag('/change_password') do %>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password_confirm %>
+    <%= password_field_tag :password_confirm %>
+  </div>
+   <div class="actions">
+    <%= submit_tag "Update password"%>
+  </div>
+<% end %>
+
+</div>
+<br/>
+<br/>
+<div class="container">
+<h3>MFA</h3>
+<label class="switch">
+  <input type="checkbox" onclick="togglemfa()" <%= "checked" if @current_user.mfa_enabled %>>
+  <span class="slider round"></span>
+</label>
+
+
+
+
+  </div>

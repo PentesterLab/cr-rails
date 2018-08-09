@@ -1,0 +1,14 @@
+
+  <body class="text-center">
+  <div class="container">
+  <%= form_for(User.new, :url => post_register_path, :html => { :class => 'form-signin', :id => 'login' }) do |f| %>
+      <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up!</button>
+      <p class="mt-5 mb-3 text-muted"><%= link_to "Password reset", password_reset_path %></p>
+    <% end %>
+  </div>
+  </body>

@@ -1,0 +1,11 @@
+
+  <body class="text-center">
+<div class="container">
+  <%= form_tag("/mfa", :html => { :class => 'form-signin', :id => 'login' }) do |f| %>
+      <h1 class="h3 mb-3 font-weight-normal">MFA Code</h1>
+      <label for="email" class="sr-only">MFA</label>
+      <input type="text" name="code" id="code" class="form-control" placeholder="code" required autofocus>
+      <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+    <% end %>
+</div>
+  </body>

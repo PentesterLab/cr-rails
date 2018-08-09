@@ -1,0 +1,25 @@
+<%= form_with(model: storedfile, local: true) do |form| %>
+  <% if storedfile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(storedfile.errors.count, "error") %> prohibited this storedfile from being saved:</h2>
+
+      <ul>
+      <% storedfile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit "Upload" %>
+  </div>
+<% end %>

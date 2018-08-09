@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @storedfile.name %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @storedfile.data %>
+</p>
+
+<p>
+  <strong>Todo:</strong>
+  <%= @storedfile.todo_id %>
+</p>
+
+<%= link_to 'Edit', edit_storedfile_path(@storedfile) %> |
+<%= link_to 'Back', storedfiles_path %>
